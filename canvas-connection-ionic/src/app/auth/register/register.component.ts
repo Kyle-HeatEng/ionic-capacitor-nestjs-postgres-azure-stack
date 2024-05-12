@@ -24,7 +24,7 @@ export class RegisterComponent {
   private toastController = inject(ToastController);
   private router = inject(Router);
 
-  formLoadingState = signal<LoadState>('idle');
+  private formLoadingState = signal<LoadState>('idle');
 
   loadState$ = toObservable(this.formLoadingState).pipe(
     filter((state) => state === 'loading'),
@@ -43,6 +43,7 @@ export class RegisterComponent {
       }
 
       if (success) {
+        this.registrationForm.reset();
         this.router.navigate(['/auth/login']);
       }
     }),

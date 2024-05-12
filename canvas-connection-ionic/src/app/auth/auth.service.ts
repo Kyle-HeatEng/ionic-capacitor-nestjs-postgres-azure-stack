@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable, inject } from '@angular/core';
 import { AbstractControl, FormBuilder, ValidationErrors, ValidatorFn, Validators } from '@angular/forms';
-import { catchError, map, of } from 'rxjs';
+import { catchError, map, of, tap } from 'rxjs';
 import { environment } from 'src/environments/environment';
 import { ApiResponse } from '../shared/types';
 
@@ -18,6 +18,29 @@ export class AuthService {
   private fb = inject(FormBuilder);
   private http = inject(HttpClient);
 
+  //Login
+  public login$ = (payload: { email: string; password: string }) =>
+    this.http
+      .post<ApiResponse<{ access_token: string }>>(
+        `${environment.apiUrl}auth/login`,
+        payload
+      )
+      .pipe(
+        tap(({ data, success }) => {
+          if (success) {
+            localStorage.setItem('access_token', data[0].access_token);
+          }
+        }),
+        map(({ success, data }) => ({ success, data })),
+        catchError(({ error }) => of(error))
+      );
+
+  public loginForm = this.fb.group({
+    email: ['', [Validators.required, Validators.email]],
+    password: ['', Validators.required],
+  });
+
+  //Register
   public register$ = (payload: RegisterPayload) =>
     this.http
       .post<ApiResponse<null>>(`${environment.apiUrl}auth/register`, payload)

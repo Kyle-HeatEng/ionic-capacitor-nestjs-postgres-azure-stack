@@ -9,6 +9,10 @@ const routes: Routes = [
   {
     path: 'auth',
     loadChildren: () => import('./auth/auth.module').then(m => m.AuthModule)
+  },
+  {
+    path: 'canvas',
+    loadChildren: () => import('./canvas/canvas.module').then(m => m.CanvasModule)
   }
     
 ];

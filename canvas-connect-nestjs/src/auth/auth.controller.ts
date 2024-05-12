@@ -42,7 +42,6 @@ export class AuthController {
   @UseGuards(AuthGuard)
   @Get('test')
   async test(@Request() req: AuthRequest) {
-    console.log(req.user);
     return {
       success: true,
       message: 'Test route',
