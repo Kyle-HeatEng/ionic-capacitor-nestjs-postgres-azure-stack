@@ -47,6 +47,7 @@ CREATE INDEX idx_piece_id ON Piece (id);
 - [x] Set up ionic mobile client
 
 #### Required routes
+- [x] auth/register
 - [ ] auth/login
 - [ ] canvas/:id/account
 - [ ] canvas/:id/feed

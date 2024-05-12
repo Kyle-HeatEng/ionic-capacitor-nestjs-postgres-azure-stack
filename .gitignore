@@ -90,14 +90,14 @@ yarn-error.log
 
 
 # Miscellaneous
-/.angular
-/.angular/cache
+.angular
+.angular/cache
 .sass-cache/
-/.nx
-/.nx/cache
-/connect.lock
+.nx
+.nx/cache
+connect.lock
 /coverage
-/libpeerconnection.log
+libpeerconnection.log
 testem.log
 /typings
 
