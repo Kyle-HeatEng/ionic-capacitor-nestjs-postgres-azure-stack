@@ -1,0 +1,55 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
+// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
+
+generator client {
+  provider = "prisma-client-js"
+  schema   = "base"
+}
+
+datasource db {
+  provider = "sqlserver"
+  url      = env("DATABASE_URL")
+  shadowDatabaseUrl = env("SHADOW_DATABASE_URL")
+}
+
+
+
+model User {
+  id              Int      @id @default(autoincrement())
+  name            String
+  email           String   @unique
+  hashedPassword  String
+
+  canvases        Canvas[]
+
+  @@index([id], name: "idx_user_id")
+}
+
+
+
+model Canvas {
+  id       Int      @id @default(autoincrement())
+  userId   Int
+  user     User     @relation(fields: [userId], references: [id])
+
+  pieces   Piece[]
+
+  @@index([id], name: "idx_canvas_id")
+  @@index([userId], name: "idx_canvas_user_id")
+}
+
+
+
+model Piece {
+  id                  Int     @id @default(autoincrement())
+  createdAtCanvasId   Int
+  totalLikes          Int
+  canvas              Canvas  @relation(fields: [createdAtCanvasId], references: [id])
+
+  @@index([id], name: "idx_piece_id")
+}
+
+
