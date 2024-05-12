@@ -1,9 +1,9 @@
 # compiled output
-dist
-node_modules
+dist/
+node_modules/
 
-# Logs
-logs
+# logs
+logs/
 *.log
 npm-debug.log*
 pnpm-debug.log*
@@ -11,64 +11,12 @@ yarn-debug.log*
 yarn-error.log*
 lerna-debug.log*
 
-# OS
+# os
 .DS_Store
 
-# Tests
-/coverage
-/.nyc_output
-
-# IDEs and editors
-/.idea
-.project
-.classpath
-.c9/
-*.launch
-.settings/
-*.sublime-workspace
-
-# IDE - VSCode
-.vscode/*
-.vscode/settings.json
-.vscode/tasks.json
-.vscode/launch.json
-.vscode/extensions.json
-
-# Specifies intentionally untracked files to ignore when using Git
-# http://git-scm.com/docs/gitignore
-
-*~
-*.sw[mnpcod]
-.tmp
-*.tmp
-*.tmp.*
-UserInterfaceState.xcuserstate
-$RECYCLE.BIN/
-
-*.log
-log.txt
-
-
-/.sourcemaps
-/.versions
-/coverage
-
-# Ionic
-/.ionic
-/www
-/platforms
-/plugins
-
-# Compiled output
-/dist
-/tmp
-/out-tsc
-/bazel-out
-
-# Node
-/node_modules
-npm-debug.log
-yarn-error.log
+# tests
+coverage/
+.nyc_output/
 
 # IDEs and editors
 .idea/
@@ -80,27 +28,55 @@ yarn-error.log
 *.sublime-project
 *.sublime-workspace
 
-# Visual Studio Code
-.vscode/*
+# IDE - VSCode
+.vscode/
+.history/
 !.vscode/settings.json
 !.vscode/tasks.json
 !.vscode/launch.json
 !.vscode/extensions.json
-.history/*
 
+# specifies intentionally untracked files to ignore when using Git
+*~
+*.sw[mnpcod]
+.tmp
+*.tmp.*
+UserInterfaceState.xcuserstate
+$RECYCLE.BIN/
+*.tmp
+log.txt
 
-# Miscellaneous
-.angular
-.angular/cache
+.sourcemaps/
+.versions/
+
+# ionic
+.ionic/
+www/
+platforms/
+plugins/
+
+# compiled output
+/dist/
+/tmp/
+/out-tsc/
+/bazel-out/
+
+# node
+/node_modules/
+npm-debug.log
+yarn-error.log
+
+# miscellaneous
+.angular/
+.angular/cache/
 .sass-cache/
-.nx
-.nx/cache
+.nx/
+.nx/cache/
 connect.lock
-/coverage
 libpeerconnection.log
 testem.log
-/typings
+typings/
 
-# System files
+# system files
 .DS_Store
 Thumbs.db
