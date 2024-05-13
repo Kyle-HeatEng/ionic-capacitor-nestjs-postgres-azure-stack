@@ -38,25 +38,32 @@ CREATE TABLE Piece (
 CREATE INDEX idx_piece_id ON Piece (id);
 ```
 - [x] Set up a nestjs application 
+- [x] Create Github actions to deploy nestjs application to Azure app services
+- [ ] Deploy nestjs application to Azure app services
 ####  Auth Services
-- [ ] Basic auth with JWT + email + password
+- [x] Basic auth with JWT + email + password
 #### Email Services
 #### Canvas Services
+- [x] Create a authenticated route to view canvas
 
 ## Ionic application 
 - [x] Set up ionic mobile client
+- [ ] Build IOS and Android applications using capacitor
+- [ ] Create Github actions to deploy ionic application to Azure Blob Storage
+- [ ] Deploy web application build to Azure blob storage and configure CDN with Azure CDN
 
 #### Required routes
 - [x] auth/register
-- [ ] auth/login
+- [x] auth/login
 - [ ] canvas/:id/account
 - [ ] canvas/:id/feed
 
-
 #### Required pages
-- [ ] Login page
+- [x] Register page
+- [x] Login page
 - [ ] Canvas Account page
 - [ ] Canvas Feed page
+
 #### Canvas requirments
 - User can have multiple alt-canvas
 - On registeration a canvas is generated for the user
@@ -69,5 +76,5 @@ allow the user to express different emotions.
 - A feature to allow users to filter artwork by tags is beyond the scope fo this 
 task however, this feature will allow users to express within the application
 a priefience for the works they wish to view.
-- [ ] Register form
+- [x] Register form
 - [ ] Email services
