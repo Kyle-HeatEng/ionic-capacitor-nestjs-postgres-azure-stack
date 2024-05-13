@@ -8,6 +8,8 @@ on:
 #     branches:
 #       - main TODO: currently disabled on this repo as azure account linked to different github account and
 #       repo must be orgisanstion to share push access
+#     paths:
+#       - 'canvas-connect-nestjs/**'
   workflow_dispatch:
 
 jobs:

@@ -45,12 +45,11 @@ CREATE INDEX idx_piece_id ON Piece (id);
 #### Email Services
 #### Canvas Services
 - [x] Create a authenticated route to view canvas
-
-## Ionic application 
+## Ionic application 
 - [x] Set up ionic mobile client
 - [ ] Build IOS and Android applications using capacitor
 - [ ] Create Github actions to deploy ionic application to Azure Blob Storage
-- [ ] Deploy web application build to Azure blob storage and configure CDN with Azure CDN
+- [ ] Deploy web application build to Azure Blob Storage and configure CDN with Azure CDN
 
 #### Required routes
 - [x] auth/register
@@ -76,5 +75,11 @@ allow the user to express different emotions.
 - A feature to allow users to filter artwork by tags is beyond the scope fo this 
 task however, this feature will allow users to express within the application
 a priefience for the works they wish to view.
+- User can select an image from there device or take a photo using `@capacitor/camera` api 
+https://capacitorjs.com/docs/apis/camera
+- This image will be uploaded to a Azure Blob Storage which will be distrubuted via a Azure CDN
+to other users feeds.
+- The image will also be saved locally to users device to prevent unnessary refetching of data. 
+This will be achieved using Filesytem API from the ionic dependancie. https://ionicframework.com/docs/react/your-first-app/saving-photos 
 - [x] Register form
 - [ ] Email services
